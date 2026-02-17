@@ -20,7 +20,7 @@ const UpdateBudget = () => {
         description: ""
     })
 
-    // Budget categories and types
+
     const categories = ["Food", "Transport", "Entertainment", "Shopping", "Bills", "Other"]
     const budgetTypes = [
         { value: "weekly", label: "Weekly" },
@@ -204,25 +204,13 @@ const UpdateBudget = () => {
                     <p className="text-gray-600 mt-2">Update your budget details</p>
                 </div>
 
-                {/* Error Alert */}
+
                 {error && (
                     <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-600 rounded-lg">
                         {error}
                     </div>
                 )}
 
-                {/* Debug info - remove in production */}
-                {!error && (
-                    <div className="mb-4 p-3 bg-green-50 border border-green-200 text-green-800 rounded-lg text-sm">
-                        <p className="font-medium">Loaded Budget Data:</p>
-                        <div className="mt-1 grid grid-cols-2 gap-1 text-xs">
-                            <span>Category: <strong>{formData.categoryName || "(empty)"}</strong></span>
-                            <span>Start Date: <strong>{formData.startingDate || "(empty)"}</strong></span>
-                            <span>Amount: <strong>{formData.amount || "(empty)"}</strong></span>
-                            <span>Type: <strong>{formData.type}</strong></span>
-                        </div>
-                    </div>
-                )}
 
                 {/* Form Card */}
                 <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">

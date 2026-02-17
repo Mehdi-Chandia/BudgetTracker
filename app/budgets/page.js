@@ -58,7 +58,6 @@ const AllBudgets = () => {
         return <div className="h-screen ">Loading...</div>
     }
 
-    // Function to format date
     const formatDate = (dateString) => {
         const date = new Date(dateString);
         return date.toLocaleDateString('en-US', {
@@ -68,7 +67,6 @@ const AllBudgets = () => {
         });
     };
 
-    // Function to get type badge color
     const getTypeColor = (type) => {
         const colors = {
             'monthly': 'bg-green-100 text-green-800',
@@ -134,20 +132,19 @@ const AllBudgets = () => {
     return (
         <div className="min-h-screen bg-gray-50 p-4 md:p-6">
             <div className="max-w-6xl mx-auto">
-                {/* Header */}
+
                 <div className="mb-8">
                     <h1 className="text-3xl font-bold text-gray-800">All Budgets</h1>
                     <p className="text-gray-500 mt-2">Manage your spending plans</p>
                 </div>
 
-                {/* Error Message */}
                 {error && (
                     <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-600 rounded-lg">
                         {error}
                     </div>
                 )}
 
-                {/* Budgets Grid */}
+
                 {budgets.length > 0 ? (
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {budgets.map((budget) => (
@@ -156,7 +153,7 @@ const AllBudgets = () => {
                                 className="bg-white rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-shadow"
                             >
                                 <div className="p-5">
-                                    {/* Header */}
+
                                     <div className="flex justify-between items-start mb-4">
                                         <div>
                                             <h3 className="font-bold text-lg text-gray-800 mb-1">
@@ -171,7 +168,7 @@ const AllBudgets = () => {
                                         </span>
                                     </div>
 
-                                    {/* Amount */}
+
                                     <div className="mb-4">
                                         <p className="text-2xl font-bold text-gray-800">
                                             {budget.amount.toLocaleString()} PKR
@@ -189,7 +186,6 @@ const AllBudgets = () => {
                                         </div>
                                     </div>
 
-                                    {/* Progress Bar (Optional - you can remove if not needed) */}
                                     <div className="mb-4">
                                         <div className="flex justify-between text-sm text-gray-600 mb-1">
                                             <span>Progress</span>
@@ -223,7 +219,7 @@ const AllBudgets = () => {
                     </div>
                 )}
 
-                {/* Add New Budget Button (Always shows if there are budgets) */}
+
                 {budgets.length > 0 && (
                     <div className="mt-10 text-center">
                         <Link href={"/budgets/create"}

@@ -13,7 +13,7 @@ const CreateTransaction = () => {
         amount: '',
         description: '',
         categoryName: 'Food',
-        categoryColor: '#EF4444', // Red
+        categoryColor: '#EF4444',
         type: 'expense',
         date: new Date().toISOString().split('T')[0]
     })

@@ -14,7 +14,6 @@ export const authOptions = {
             },
             async authorize(credentials) {
                 try {
-                    // FIX 1: Check credentials exist
                     if (!credentials?.email || !credentials?.password) {
                         throw new Error("Email and password required");
                     }
@@ -70,10 +69,10 @@ export const authOptions = {
         signIn: "/login",
     },
     session: {
-        strategy: "jwt",  // Use JWT, not database sessions
-        maxAge: 30 * 24 * 60 * 60, // 30 days
+        strategy: "jwt",
+        maxAge: 30 * 24 * 60 * 60,
     },
-    secret: process.env.NEXTAUTH_SECRET,  // Don't forget this!
+    secret: process.env.NEXTAUTH_SECRET,
     debug: process.env.NODE_ENV === "development"
 }
 

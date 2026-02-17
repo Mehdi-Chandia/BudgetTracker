@@ -164,7 +164,7 @@ console.log(error)
                                         </div>
                                     </div>
 
-                                    {/* Description - Fixed with min-height */}
+
                                     <div className="mb-4 flex-grow min-h-[60px]">
                                         <p className="text-gray-700">
                                             📜 {transaction.description}
